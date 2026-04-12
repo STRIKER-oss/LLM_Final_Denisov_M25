@@ -5,8 +5,7 @@ from app.db.session import AsyncSessionLocal
 from app.repositories.users import UserRepository
 from app.usecases.auth import AuthUseCase
 from app.core.security import decode_token
-from app.core.exceptions import InvalidTokenError, TokenExpiredError
-import jwt
+from app.core.exceptions import InvalidTokenError
 
 async def get_db() -> AsyncSession:
     async with AsyncSessionLocal() as session:

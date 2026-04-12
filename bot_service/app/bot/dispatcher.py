@@ -1,0 +1,12 @@
+from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
+from aiogram.client.default import DefaultBotProperties
+from app.core.config import settings
+from app.bot.handlers import register_handlers
+
+bot = Bot(token=settings.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+dp = Dispatcher()
+
+def setup_dispatcher() -> Dispatcher:
+    register_handlers(dp)
+    return dp

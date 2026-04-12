@@ -18,7 +18,12 @@ class AuthUseCase:
         user = await self.user_repo.create(email, password_hash)
         await self.session.commit()
         
-        return {"id": user.id, "email": user.email, "role": user.role}
+        return {
+            "id": user.id,
+            "email": user.email,
+            "role": user.role,
+            "created_at": user.created_at
+        }
     
     async def login(self, email: str, password: str) -> str:
         user = await self.user_repo.get_by_email(email)
@@ -36,4 +41,9 @@ class AuthUseCase:
         if not user:
             raise UserNotFoundError()
         
-        return {"id": user.id, "email": user.email, "role": user.role, "created_at": user.created_at}
+        return {
+            "id": user.id,
+            "email": user.email,
+            "role": user.role,
+            "created_at": user.created_at
+        }

@@ -1,3 +1,4 @@
+<img width="1371" height="962" alt="Screenshot from 2026-04-10 10-00-38" src="https://github.com/user-attachments/assets/fb809c42-670e-4613-ae6c-9343e3ed91ec" />
 # Система LLM-консультаций
 
 ## Архитектура
